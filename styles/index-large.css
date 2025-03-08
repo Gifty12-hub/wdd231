@@ -1,5 +1,5 @@
 /* Hide menu links for small screens */
-@media screen and (max-width: 789px) { 
+@media screen and (max-width: 840px) { 
     #menu {
         display: block; /* Show menu button */
     }
@@ -44,19 +44,21 @@
 
     .card1 {
         order: -1; /* Moves card1 to the top */
-        width: 25rem;
+        width: 35rem;
     }
 
     .card2 {
         order: 1; /* Moves card2 below card1 */
-        width: 25rem;
+        width: 35rem;
     }
 
 
     .card {
         order: 2;
         margin: 1rem;
-        width: 25rem;
+        width: 35rem;
+        position: relative;
+        left: 1rem;
     }
     .gen button {
         left: 5rem;
