@@ -1,0 +1,73 @@
+/* Hide menu links for small screens */
+@media screen and (max-width: 768px) {
+    #menu {
+        display: block; /* Show menu button on small screens */
+    }
+
+    .navbar {
+        display: none; /* Hide navbar initially */
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 6rem;
+        left: 20rem;
+        width: 20rem;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar.open {
+        display: flex; /* Show menu when the button is clicked */
+    }
+
+    .navbar a {
+        display: block;
+        padding: 1rem;
+        text-align: center;
+        width: 20rem;
+    } h2 {
+        font-size: 1.2rem;
+        padding: 0.8rem;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    
+    .container {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card1 {
+        order: -1; /* Moves card1 to the top */
+        width: 40rem;
+    }
+
+    .card2 {
+        order: 1; /* Moves card2 below card1 */
+        width: 40rem;
+    }
+
+
+    .card {
+        order: 2;
+        margin: 1rem;
+        width: 41rem;
+    }
+    .gen button {
+        left: 5rem;
+        width: 5rem;
+        font-size: 0.9rem;
+    }
+    .course {
+        grid-template-columns: 1fr;
+    }
+    .course button {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+}

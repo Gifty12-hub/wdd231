@@ -1,0 +1,179 @@
+body {
+    font-weight: 800;
+    font-style: normal;
+    font-family: "Raleway", serif;
+}
+* {
+    box-sizing: border-box;
+}
+header, footer{
+    width: 100%;
+    background-color: rgb(148, 109, 151);
+    color: azure;
+    text-align: center;
+}
+.head {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/* small view navigation */
+#menu {
+	font-size: 1.5rem;
+	border: 0;
+	background: none;
+    display: none;
+	color: #000;
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+}
+
+#menu::before {
+	content: "☰";
+}
+
+#menu.open::before {
+	content: "❌";
+}
+
+/* when the button is clicked - the open class is toggled (added/removed) */
+.open a {
+	display: block;
+}
+
+.navbar {
+    background-color: aquamarine;
+    color: #fff;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.navbar a:hover {
+    background-color: rgb(55, 150, 42);
+    color: black;
+}
+.navbar a {
+    display: flex;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding: 0.75rem 1rem;
+}
+h2 {
+    background-color: rgb(80, 80, 136);
+    color: rgb(10, 10, 10);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+h1 {
+    text-align: center;
+    padding: 1rem;;
+}
+main {
+    max-width: 1400px;
+    margin:0 auto;
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.card {
+    background: rgb(139, 139, 36);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 4px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.c {
+    grid-column: span 2; /* This makes it take the full width below */
+}
+
+img {
+    border: 1px solid steelblue;
+    padding: 2px;
+    box-shadow: 0 0 30px gray;
+}
+.card1 {
+    background-color: rgb(139, 139, 36);
+    padding: 10px;
+    border: 1px solid #dddddd98;
+    margin: 2rem;
+    border-radius: 8px;
+}
+.card2 {
+    background-color: rgb(139, 139, 36);
+    padding: 10px;
+    border: 1px solid #dddddd98;
+    margin: 2rem;
+    border-radius: 8px;
+}
+
+
+figcaption {
+    padding-bottom: 1.5rem;
+    text-align: left;
+    font-size: 0.65rem;
+    margin-left: 3.5rem;
+    margin-top: 10rem;
+    font-style: italic;
+}
+.flag img {
+    float: left;
+    height: auto;
+    margin-top: 0.1rem;
+}
+.card1 ul {
+    margin-left: 2rem;
+    margin-top: 2rem;
+    padding: 0;
+}
+.card1 li {
+    margin: 7px 0;
+}
+
+.gen button {
+    position: relative;
+    left: 25rem;
+    background: #00ff62;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    width: 8rem;
+    border-bottom: 4px solid #0c0909;
+    border-width: 2px;
+}
+.gen button:hover {
+    background: #1ac59a;
+}
+.course {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.course button {
+    background: #dc3545;
+    color: white;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.course button:hover {
+    background: #1d36a7;
+}

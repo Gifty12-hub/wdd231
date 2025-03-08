@@ -3,9 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 231</title>
+    <meta name="description" content="My name is Gifty and i am studying Software development. This site is used for veiwing all kinds of pictures">
+    <meta name="author" content="Gifty Akosua Arkoh">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap" rel="stylesheet">
+    <title>WDD 231 - WEB FRONTEND DEVELOPMENT I | GIFTY AKOSUA ARKOH</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/index-large.css">
+    <script src="scripts/index.js" defer></script>
 </head>
 <body>
-    <h1>Welcome to WDD 231</h1>
+    <header>
+        <div class="head">
+            <img src="images/gift.jpg" alt="logo" width="100" height="100">
+            <h1>Gifty Akosua Arkoh</h1>
+            <button type="button" id="menu"></button>
+        </div>
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#">Chamber</a>
+            <a href="https://linkedin.com/in/giftyarkoh">Linkedin</a>
+            <a href="https://github.com/Gifty12-hub/">GitHub Profile</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Home</h1>
+        <div class="container">
+            <section class="card1">
+                <h2>My Course Work</h2>
+                <ul>
+                    <li><a href="#">About Me</a></li>
+                    <li><a href="#">Temples</a></li>
+                    <li><a href="#">Places</a></li>
+                    <li><a href="#">Project</a></li>
+                </ul>
+            </section>
+            <section class="card2">
+                <h2>Ogua,Ghana</h2>
+                <figure class="flag">
+                    <img src="images/ghana.jpg" alt="ghimg" width="200" height="100">
+                </figure>
+                <figure>
+                    <figcaption>Ogua, Gomoa West</figcaption>
+                </figure>
+            </section>
+            <section class="card c">
+                <h2>Web and Computer Programming Certificate</h2>
+                <div class="gen">
+                    <button id="all-btn">All</button>
+                    <button id="cse-btn">CSE</button>
+                    <button id="wdd-btn">WDD</button>
+                </div>
+                <aside class="course" id="course-list">
+                    <button>CSE 110</button>
+                    <button>WDD 130</button>
+                    <button>CSE 111</button>
+                    <button>CSE 210</button>
+                    <button>WDD 131</button>
+                    <button>WDD 231</button>
+                </aside>
+                <p id="total-credits">Total Credit:0</p>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> 💻Gifty Akosua Arkoh💻,Ghana.</p>
+        <p id="lastModified"></p>
+    </footer>
 </body>
 </html>
