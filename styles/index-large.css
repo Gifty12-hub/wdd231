@@ -44,19 +44,19 @@
 
     .card1 {
         order: -1; /* Moves card1 to the top */
-        width: 25rem;
+        width:15rem;
     }
 
     .card2 {
         order: 1; /* Moves card2 below card1 */
-        width: 25rem;
+        width: 15rem;
     }
 
 
     .card {
         order: 2;
         margin: 1rem;
-        width: 25rem;
+        width: 15rem;
         position: relative;
         left: 1rem;
     }
@@ -71,6 +71,9 @@
     .course button {
         font-size: 0.9rem;
         padding: 8px;
+    }
+    header,footer {
+        width: 50rem;
     }
 
 }
