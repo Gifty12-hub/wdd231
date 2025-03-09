@@ -1,79 +1,110 @@
-/* Hide menu links for small screens */
-@media screen and (max-width: 840px) { 
-    #menu {
-        display: block; /* Show menu button */
-    }
-    .navbar {
-        display: none; /* Hide navbar initially */
-        flex-direction: column;           
-        align-items: center;
-        position: absolute;
-        top: 5rem;
-        left: 0;
-        width: 100%;
-        background: white;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .navbar.open {
-        display: flex; /* Show menu when the button is clicked */
-    }
-    .navbar a {
-        display: block;
-        padding: 1rem;
-        text-align: center;
-        width: 100%;
-        border-bottom: 1px solid #ccc;
-    }
+/* Media Queries */
 
-    h2 {
-        font-size: 1.2rem;
-        padding: 0.8rem;
-    }
-    h1 {
-        font-size: 1.5rem;
-    }
-    
-    
+/* Small screens (mobile) */
+@media screen and (max-width: 600px) {
     .container {
-        grid-template-columns: 1fr; /* Single column layout */
-    }
-    .container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .card1 {
-        order: -1; /* Moves card1 to the top */
-        width:25rem;
-    }
-
-    .card2 {
-        order: 1; /* Moves card2 below card1 */
-        width: 25rem;
-    }
-
-
-    .card {
-        order: 2;
-        margin: 1rem;
-        width: 25rem;
-        position: relative;
-        left: 1rem;
-    }
-    .gen button {
-        left: 5rem;
-        width: 5rem;
-        font-size: 0.9rem;
-    }
-    .course {
         grid-template-columns: 1fr;
     }
-    .course button {
-        font-size: 0.9rem;
-        padding: 8px;
+    .c {
+        grid-column: span 1;
     }
-    header,footer {
-        width: 50rem;
+    .gen button {
+        left: 0;
+        width: 100%;
     }
+    .navbar {
+        flex-direction: column;
+        display: none;
+    }
+    .navbar.open {
+        display: flex;
+    }
+    #menu {
+        display: block;
+    }
+}
 
+/* Medium screens (tablets) */
+@media screen and (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    .gen button {
+        left: 0;
+    }
+    .navbar {
+        flex-direction: column;
+    }
+    .navbar a {
+        padding: 0.5rem;
+    }
+}
+
+/* Large screens (desktops) */
+@media screen and (min-width: 1025px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .navbar {
+        display: flex;
+    }
+    #menu {
+        display: none;
+    }
+}
+
+
+/* Media Queries */
+
+/* Small screens (mobile) */
+@media screen and (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    .c {
+        grid-column: span 1;
+    }
+    .gen button {
+        left: 0;
+        width: 100%;
+    }
+    .navbar {
+        flex-direction: column;
+        display: none;
+    }
+    .navbar.open {
+        display: flex;
+    }
+    #menu {
+        display: block;
+    }
+}
+
+/* Medium screens (tablets) */
+@media screen and (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    .gen button {
+        left: 0;
+    }
+    .navbar {
+        flex-direction: column;
+    }
+    .navbar a {
+        padding: 0.5rem;
+    }
+}
+
+/* Large screens (desktops) */
+@media screen and (min-width: 1025px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .navbar {
+        display: flex;
+    }
+    #menu {
+        display: none;
+    }
 }
