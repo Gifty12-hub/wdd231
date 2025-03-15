@@ -27,6 +27,40 @@ header {
     top: 0;
     z-index: 1000;
 }
+/* Navigation Bar Styles */
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: #359487; /* Deep blue */
+    padding: 20px;
+    border-radius: 3px;
+    box-shadow: 0px 4px 6px rgba(158, 30, 30, 0.2);
+}
+
+nav button {
+    background-color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #004080;
+    border-radius: 5px;
+}
+
+nav button:hover {
+    background-color: #0080ff; /* Light blue */
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+nav button.active {
+    background-color: #002060; /* Darker blue */
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
 
 /* Main Content */
 main {
@@ -35,7 +69,6 @@ main {
     justify-content: center;
     padding: 40px 10px;
 }
-
 /* Prophet Cards Section */
 #cards {
     display: grid;
@@ -46,46 +79,19 @@ main {
     margin: auto;
 }
 
-/* Individual Prophet Card */
-.figureC {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    transition: all 0.3s ease-in-out;
-    overflow: hidden;
-    position: relative;
-}
-
-.figureC:hover {
-    transform: translateY(-5px);
-    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Prophet Card Header */
-.capt {
-    background: #003366;
-    color: white;
-    padding: 12px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 8px 8px 0 0;
-    text-transform: uppercase;
-}
-
 /* Prophet Name */
-h3 {
+h2 {
     margin-top: 10px;
     font-size: 22px;
     font-weight: bold;
-    color: #40a0ff;
+    color: #2e70b3;
 }
 
 /* Prophet Details */
 p {
     margin: 5px 0;
     font-size: 16px;
-    color: #c2c2c2;
+    color: #000000;
 }
 
 /* Prophet Image */
@@ -93,11 +99,6 @@ img {
     width: 100%;
     height: auto;
     border-radius: 0 0 8px 8px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.figureC:hover img {
-    transform: scale(1.03);
 }
 
 /* Footer */
