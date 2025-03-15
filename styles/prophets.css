@@ -1,0 +1,113 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Main Content */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px 10px;
+}
+
+/* Prophet Cards Section */
+#cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    width: 95%;
+    max-width: 1300px;
+    margin: auto;
+}
+
+/* Individual Prophet Card */
+.figureC {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    position: relative;
+}
+
+.figureC:hover {
+    transform: translateY(-5px);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Prophet Card Header */
+.capt {
+    background: #003366;
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+    text-transform: uppercase;
+}
+
+/* Prophet Name */
+h3 {
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #40a0ff;
+}
+
+/* Prophet Details */
+p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #c2c2c2;
+}
+
+/* Prophet Image */
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 0 0 8px 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.figureC:hover img {
+    transform: scale(1.03);
+}
+
+/* Footer */
+footer {
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+    font-size: 16px;
+    margin-top: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
