@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Tech Innovators Ltd.",
+        "address": "123 Innovation Street, Accra, Ghana",
+        "phone": "+233 24 123 4567",
+        "website": "https://techinnovators.com",
+        "image": "images/bc.webp",
+        "membership_level": 3,
+        "description": "A leading company in AI and software development."
+    },
+    {
+        "name": "STEM Builders Inc.",
+        "address": "45 Learning Avenue, Kumasi, Ghana",
+        "phone": "+233 20 987 6543",
+        "website": "https://stembuilders.com",
+        "image": "images/L1.webp",
+        "membership_level": 2,
+        "description": "Empowering youth through STEM education."
+    },
+    {
+        "name": "Green Energy Solutions",
+        "address": "88 Solar Street, Cape Coast, Ghana",
+        "phone": "+233 55 876 1234",
+        "website": "https://greenenergy.com",
+        "image": "images/tq.webp",
+        "membership_level": 1,
+        "description": "Pioneers in renewable energy solutions."
+    },
+    {
+        "name": "AgroTech Ghana",
+        "address": "14 Farming Road, Tamale, Ghana",
+        "phone": "+233 30 456 7890",
+        "website": "https://agrotechghana.com",
+        "image": "images/ttt.webp",
+        "membership_level": 3,
+        "description": "Transforming agriculture through technology."
+    },
+    {
+        "name": "HealthTech Africa",
+        "address": "202 Wellness Drive, Accra, Ghana",
+        "phone": "+233 26 654 3210",
+        "website": "https://healthtechafrica.com",
+        "image": "images/l3.webp",
+        "membership_level": 2,
+        "description": "Innovative solutions for healthcare."
+    },
+    {
+        "name": "FinTech Hub",
+        "address": "7 Money Street, Takoradi, Ghana",
+        "phone": "+233 27 111 2222",
+        "website": "https://fintechhub.com",
+        "image": "images/fm.webp",
+        "membership_level": 1,
+        "description": "Providing financial technology solutions."
+    },
+    {
+        "name": "EduTech Solutions",
+        "address": "99 Knowledge Lane, Sunyani, Ghana",
+        "phone": "+233 50 333 4444",
+        "website": "https://edutech.com",
+        "image": "images/techie.webp",
+        "membership_level": 3,
+        "description": "Revolutionizing education with technology."
+    }
+]

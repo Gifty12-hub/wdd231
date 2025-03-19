@@ -26,48 +26,46 @@ footer {
 /* small view navigation */
 #menu {
 	font-size: 1.5rem;
-	border: none;
+	border: 0;
 	background: none;
-    display: none;
 	color: #000;
 	position: absolute;
 	top: 1rem;
 	right: 1rem;
 }
-
 #menu::before {
 	content: "☰";
 }
-
 #menu.open::before {
 	content: "❌";
 }
-
-/* when the button is clicked - the open class is toggled (added/removed) */
+nav {
+	display: flex;
+	flex-direction: column;
+}
+.navbar {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	list-style: none;
+	color: #fff;
+}
+.navbar a {
+	display: none;
+	padding: 1rem;
+	text-align: left;
+	text-decoration: none;
+	color: rgb(10, 6, 6);
+}
+.navbar a:hover {
+	background-color: #464fd3;
+	color: rgb(12, 11, 12);
+	font-weight: 700;
+}
 .open a {
 	display: block;
 }
 
-.navbar {
-    background-color: aquamarine;
-    color: #fff;
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-.navbar a:hover {
-    background-color: rgb(55, 150, 42);
-    color: black;
-}
-.navbar a {
-    display: flex;
-    padding: 1rem;
-    text-align: center;
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    padding: 0.75rem 1rem;
-}
 h2 {
     background-color: rgb(80, 80, 136);
     color: rgb(202, 197, 197);

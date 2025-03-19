@@ -1,0 +1,39 @@
+@media (min-width: 840px) {
+	header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.navbar {
+		flex-direction: row;
+	}
+	.navbar a {
+		display: block;
+		flex: 2 1 100%;
+	}
+	#menu {
+        display: none;
+    }
+}
+
+
+
+/* Small screens (mobile devices) */
+@media screen and (max-width: 840px) {
+    
+    .card1, .gird-card2 {
+        grid-template-columns: 1fr;
+    }
+
+    .bus-card img {
+        max-width: 60px;
+    }
+}
+
+/* Medium screens (tablets) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .card1, .gird-card2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
