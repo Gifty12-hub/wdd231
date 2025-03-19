@@ -55,13 +55,9 @@ header h1 {
 #menu::before {
 	content: "☰";
 }
-
 #menu.open::before {
 	content: "❌";
 }
-
-/* Small Icon */
-
 nav {
 	display: flex;
 	flex-direction: column;
@@ -190,7 +186,7 @@ main {
     color: #397fc5;
 }
 
-/* Footer */
+
 footer {
     background-color: #004080;
     color: white;

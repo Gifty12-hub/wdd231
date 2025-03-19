@@ -1,5 +1,6 @@
-@media (min-width: 840px) {
-	header {
+/* Media Query for Smaller Screens */
+@media screen and (max-width: 768px) {
+    header {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -14,26 +15,31 @@
 	#menu {
         display: none;
     }
-}
 
+    main {
+        padding: 10px;
+    }
 
-
-/* Small screens (mobile devices) */
-@media screen and (max-width: 840px) {
-    
-    .card1, .gird-card2 {
+    .card1 {
         grid-template-columns: 1fr;
+        padding: 10px;
     }
 
-    .bus-card img {
-        max-width: 60px;
+    .fyi {
+        padding: 10px;
+    }
+
+    #directory {
+        padding: 10px;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .sociallinks {
+        flex-direction: column;
+        align-items: center;
     }
 }
-
-/* Medium screens (tablets) */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-    .card1, .gird-card2 {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-

@@ -6,13 +6,13 @@ const lastModified = document.lastModified;
 document.getElementById("lastModified").innerHTML = "Last Modified: " + lastModified;
 
 document.addEventListener("DOMContentLoaded", function () {
-    const menuButton = document.getElementById("menu");
-    const nav = document.querySelector(".navbar");
+const menuButton = document.getElementById("menu");
+const nav = document.querySelector(".navbar");
 
-    menuButton.addEventListener("click", function () {
-        navbar.classList.toggle("open");
-        menuButton.classList.toggle("open");
-    });
+menuButton.addEventListener("click", function () {
+    navbar.classList.toggle("open");
+    menuButton.classList.toggle("open");
+});
 
     
     // Fetch members
