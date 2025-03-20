@@ -5,19 +5,18 @@ document.getElementById("currentyear").innerHTML = currentYear;
 const lastModified = document.lastModified; 
 document.getElementById("lastModified").innerHTML = "Last Modified: " + lastModified;
 
-document.addEventListener("DOMContentLoaded", function () {
-const menuButton = document.getElementById("menu");
-const nav = document.querySelector(".navbar");
 
-menuButton.addEventListener("click", function () {
-    navbar.classList.toggle("open");
-    menuButton.classList.toggle("open");
+const menuButton = document.querySelector('#menu');
+const nav = document.querySelector('.navbar');
+
+menuButton.addEventListener('click', ()  => {
+    navbar.classList.toggle('open');
+    menuButton.classList.toggle('open');
 });
 
     
     // Fetch members
-        getMembers();
-    });
+    getMembers();
     
     const memberList = document.getElementById('member-list');
     const toggleButton = document.getElementById('toggle-view');

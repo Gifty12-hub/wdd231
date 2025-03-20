@@ -45,12 +45,18 @@
     .container {
         grid-template-columns: 1fr 1fr;
     }
-    .navbar {
-        display: flex;
-    }
     #menu {
-        display: none;
-    }
+		display: none; /* hide hamburger button */
+	}
+
+	.navbar {
+		flex-direction: row;
+	}
+
+	.navbar a {
+		display: block;
+		flex: 1 1 100%;
+	}
 }
 
 

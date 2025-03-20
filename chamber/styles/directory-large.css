@@ -6,14 +6,18 @@
 		justify-content: space-between;
 	}
 	.navbar {
-		flex-direction: row;
+		flex-direction: column;
+        display: none;
 	}
 	.navbar a {
 		display: block;
 		flex: 2 1 100%;
 	}
+    .navbar.open {
+        display: flex;
+    }
 	#menu {
-        display: none;
+        display: block;
     }
 
     main {
@@ -30,7 +34,7 @@
     }
 
     #directory {
-        padding: 10px;
+        padding: 10rem;
     }
 
     footer {
@@ -41,5 +45,17 @@
     .sociallinks {
         flex-direction: column;
         align-items: center;
+    }
+}
+
+
+/* Large screens (desktops) */
+@media screen and (min-width: 1025px) {
+   
+    .navbar {
+        display: flex;
+    }
+    #menu {
+        display: none;
     }
 }

@@ -23,6 +23,15 @@ footer {
     justify-content: space-around;
     align-items: center;
 }
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+	max-width: 90rem;
+	margin: rem auto;
+}
+
 /* small view navigation */
 #menu {
 	font-size: 1.5rem;
@@ -33,37 +42,44 @@ footer {
 	top: 1rem;
 	right: 1rem;
 }
+
 #menu::before {
 	content: "☰";
 }
+
 #menu.open::before {
 	content: "❌";
 }
-nav {
-	display: flex;
-	flex-direction: column;
-}
+
 .navbar {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	list-style: none;
+	background-color: #0f0f0f;
 	color: #fff;
 }
+
 .navbar a {
 	display: none;
 	padding: 1rem;
-	text-align: left;
+	text-align: center;
 	text-decoration: none;
-	color: rgb(10, 6, 6);
+	color: #fff;
 }
 .navbar a:hover {
-	background-color: #464fd3;
-	color: rgb(12, 11, 12);
+	background-color: #bbb;
+	color: #333;
 	font-weight: 700;
 }
+
+/* when the button is clicked - the open class is toggled (added/removed) */
 .open a {
 	display: block;
+}
+
+.active::before { 
+	content: "📍";  /* just a wayfinding symbol for the user */
 }
 
 h2 {
