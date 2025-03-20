@@ -9,15 +9,15 @@
 		flex-direction: column;
         display: none;
 	}
-	.navbar a {
-		display: block;
-		flex: 2 1 100%;
-	}
+
     .navbar.open {
         display: flex;
     }
 	#menu {
         display: block;
+    }
+    .navbar a {
+        padding: 0.5rem;
     }
 
     main {

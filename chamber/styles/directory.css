@@ -25,10 +25,12 @@ body {
 
 /* Header Styles */
 header{
-    width: 100%;
-    background-color: rgb(148, 109, 151);
-    color: rgb(0, 0, 0);
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #806d94;
+    padding: 5px;
+    color: #000;
 }
 
 .head {
@@ -87,7 +89,9 @@ nav {
 .open a {
 	display: block;
 }
-
+.active::before { 
+	content: "📍";  /* just a wayfinding symbol for the user */
+}
 /* Main Content */
 main {
     padding: 20px;
