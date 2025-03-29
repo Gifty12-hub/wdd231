@@ -5,7 +5,7 @@
         "phone": "+233 24 123 4567",
         "website": "https://techinnovators.com",
         "image": "images/bc.webp",
-        "membership_level": 3,
+        "membership_level": "Gold",
         "description": "A leading company in AI and software development."
     },
     {
@@ -14,7 +14,7 @@
         "phone": "+233 20 987 6543",
         "website": "https://stembuilders.com",
         "image": "images/L1.webp",
-        "membership_level": 2,
+        "membership_level": "Gold",
         "description": "Empowering youth through STEM education."
     },
     {
@@ -23,7 +23,7 @@
         "phone": "+233 55 876 1234",
         "website": "https://greenenergy.com",
         "image": "images/tq.webp",
-        "membership_level": 1,
+        "membership_level": "Silver",
         "description": "Pioneers in renewable energy solutions."
     },
     {
@@ -32,7 +32,7 @@
         "phone": "+233 30 456 7890",
         "website": "https://agrotechghana.com",
         "image": "images/ttt.webp",
-        "membership_level": 3,
+        "membership_level": "Gold",
         "description": "Transforming agriculture through technology."
     },
     {
@@ -41,7 +41,7 @@
         "phone": "+233 26 654 3210",
         "website": "https://healthtechafrica.com",
         "image": "images/l3.webp",
-        "membership_level": 2,
+        "membership_level": "Silver",
         "description": "Innovative solutions for healthcare."
     },
     {
@@ -50,7 +50,7 @@
         "phone": "+233 27 111 2222",
         "website": "https://fintechhub.com",
         "image": "images/fm.webp",
-        "membership_level": 1,
+        "membership_level": "Gold",
         "description": "Providing financial technology solutions."
     },
     {
@@ -59,7 +59,7 @@
         "phone": "+233 50 333 4444",
         "website": "https://edutech.com",
         "image": "images/techie.webp",
-        "membership_level": 3,
+        "membership_level": "Silver",
         "description": "Revolutionizing education with technology."
     }
 ]

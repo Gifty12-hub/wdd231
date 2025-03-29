@@ -1,0 +1,438 @@
+document.addEventListener("DOMContentLoaded", () => {
+    // Set footer dynamic content
+    const currentYear = document.getElementById("currentyear");
+    const lastModified = document.getElementById("lastModified");
+    if (currentYear) {
+        currentYear.textContent = new Date().getFullYear();
+    }
+    if (lastModified) {
+        lastModified.textContent = `Last Modified: ${document.lastModified}`;
+    }
+
+    // Navigation menu toggle for mobile
+    const hamButton = document.querySelector("menu");
+    const navigation = document.querySelector(".navbar");
+    if (hamButton && navigation) {
+        hamButton.addEventListener("click", () => {
+            navigation.classList.toggle("open");
+            hamButton.classList.toggle("open");
+            hamButton.setAttribute(
+                "aria-expanded",
+                navigation.classList.contains("open")
+            );
+        });
+    }
+
+    // Fetch members for directory and spotlights
+    getMembers();
+
+    // Fetch weather data
+    apiFetch();
+});
+
+// Select elements for member directory (directory.html)
+const memberList = document.getElementById("member-list");
+const toggleButton = document.getElementById("toggle-view");
+
+// Select elements for spotlights (index.html)
+const spotlightList = document.getElementById("spotlight-list");
+
+// Fetch members from JSON
+async function getMembers() {
+    try {
+        const response = await fetch("data/members.json");
+        if (!response.ok) {
+            throw Error(`HTTP error! Status: ${response.status}`);
+        }
+        const members = await response.json();
+
+        // Convert membership_level to a numeric value
+        members.forEach(member => {
+            member.membershipLevel = convertMembershipLevel(member.membership_level);
+        });
+
+        // Display spotlights for home page
+        if (spotlightList) {
+            displaySpotlights(members);
+        }
+    } catch (error) {
+        console.error("Error fetching members:", error);
+        if (spotlightList) {
+            spotlightList.innerHTML =
+                "<p>Failed to load spotlights. Please try again later.</p>";
+        }
+    }
+}
+
+// Convert membership levels from string to number
+function convertMembershipLevel(level) {
+    const levelMap = {
+        "Gold": 3,
+        "Silver": 2,
+        "Member": 1
+    };
+    return levelMap[level] || 0;
+}
+
+// Display 2-3 random gold or silver members for spotlights on home page
+function displaySpotlights(members) {
+    if (!spotlightList) return;
+    spotlightList.innerHTML = "";
+
+    // Filter for gold (3) and silver (2) members
+    const eligibleMembers = members.filter(
+        (member) => member.membershipLevel === 2 || member.membershipLevel === 3
+    );
+
+    // Randomly select 2-3 members
+    const shuffled = eligibleMembers.sort(() => 0.5 - Math.random());
+    const selected = shuffled.slice(0, Math.min(3, shuffled.length));
+
+    // Display selected members
+    selected.forEach((member) => {
+        const card = document.createElement("div");
+        card.innerHTML = `
+            <h3>${member.name}</h3>
+            <img src="${member.image}" alt="${member.name} logo" loading="lazy">
+            <p>${member.address}</p>
+            <p>Phone: ${member.phone}</p>
+            <p><a href="${member.website}" target="_blank" rel="noopener noreferrer">
+            ${member.website}</a></p>
+            <p>Membership Level: ${member.membership_level}</p>
+            <p>${member.description}</p>
+        `;
+        spotlightList.appendChild(card);
+    });
+}
+
+// Call the function to fetch and display members
+getMembers();
+
+
+// Toggle grid/list view for directory page
+if (toggleButton && memberList) {
+    memberList.classList.add("grid-view"); // Ensure initial state
+    toggleButton.textContent = "Toggle List View";
+    toggleButton.setAttribute("aria-label", "Switch to list view");
+
+    toggleButton.addEventListener("click", () => {
+        memberList.classList.toggle("grid-view");
+        memberList.classList.toggle("list-view");
+        const isGridView = memberList.classList.contains("grid-view");
+        toggleButton.textContent = isGridView ? "Toggle List View" : "Toggle Grid View";
+        toggleButton.setAttribute(
+            "aria-label",
+            isGridView ? "Switch to list view" : "Switch to grid view"
+        );
+    });
+}
+
+// Weather
+const currentTemp = document.querySelector("#current-temp");
+const weatherIconContainer = document.querySelector("#weather-icon-container");
+const captionDesc = document.querySelector("#weather-desc");
+const forecastList = document.querySelector("#forecast-list");
+
+const myKey = "4cb1173412272596f5e7b4f2093a718b";
+const myLat = "5.56";
+const myLong = "-0.19";
+const currentUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${myLat}&lon=${myLong}&units=metric&appid=${myKey}`;
+const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${myLat}&lon=${myLong}&units=metric&appid=${myKey}`;
+
+async function apiFetch() {
+    try {
+        const currentResponse = await fetch(currentUrl);
+        if (!currentResponse.ok) throw new Error("Current weather fetch failed");
+        const currentData = await currentResponse.json();
+        displayCurrentWeather(currentData);
+
+        const forecastResponse = await fetch(forecastUrl);
+        if (!forecastResponse.ok) throw new Error("Forecast fetch failed");
+        const forecastData = await forecastResponse.json();
+        displayForecast(forecastData);
+    } catch (error) {
+        console.error("Weather error:", error.message);
+        if (currentTemp) currentTemp.textContent = "N/A";
+        if (captionDesc) captionDesc.textContent = "Unable to load weather";
+        if (forecastList) forecastList.innerHTML = "<li>Unable to load forecast</li>";
+    }
+}
+
+function displayCurrentWeather(data) {
+    if (currentTemp) currentTemp.innerHTML = `${Math.round(data.main.temp)} °C`;
+    if (captionDesc) {
+        const desc = data.weather[0].description;
+        captionDesc.textContent = desc.charAt(0).toUpperCase() + desc.slice(1);
+    }
+    if (weatherIconContainer) {
+        weatherIconContainer.innerHTML = "";
+        const img = document.createElement("img");
+        img.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+        img.alt = data.weather[0].description;
+        weatherIconContainer.appendChild(img);
+    }
+}
+
+function displayForecast(data) {
+    if (!forecastList) return;
+    forecastList.innerHTML = "";
+    const today = new Date().getDate();
+    const seenDays = new Set([today]);
+    const forecasts = [];
+
+    for (const entry of data.list) {
+        const entryDate = new Date(entry.dt * 1000);
+        const entryDay = entryDate.getDate();
+        if (!seenDays.has(entryDay) && forecasts.length < 3) {
+            forecasts.push({
+                date: entryDate,
+                temp: Math.round(entry.main.temp),
+                icon: entry.weather[0].icon,
+                desc: entry.weather[0].description
+            });
+            seenDays.add(entryDay);
+        }
+        if (forecasts.length === 3) break;
+    }
+
+    forecasts.forEach(f => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+            ${f.date.toLocaleDateString("en-US", { weekday: "long" })}: ${f.temp} °C
+            <img src="https://openweathermap.org/img/wn/${f.icon}.png" alt="${f.desc}" style="width: 30px; vertical-align: middle;">
+        `;
+        forecastList.appendChild(li);
+    });
+}
+
+// Call the weather fetch function
+apiFetch();
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Business directory for our Chamber of Commerce. Connect with local businesses and services.">
+    <meta name="author" content="Gifty Akosua Arkoh">
+    <meta property="og:title" content="Kasoa of Commerce - Business Directory">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://gifty12-hub.github.io/wdd231/chamber/images/smallicon.png">
+    <meta property="og:url" content="https://gifty12-hub.github.io/wdd231/chamber/directory.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap" rel="stylesheet">
+    <title>Kasoa Chamber of Commerce | GIFTY AKOSUA ARKOH</title>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/directory.css">
+    <link rel="stylesheet" href="styles/directory-large.css">
+    <script src="scripts/directory.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="head">
+            <img src="images/rsz_1rsz_okcc.png" alt="kc" width="100">
+            <h1>Kasoa Chamber of Commerce</h1>
+            <button type="button" id="menu"></button>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="directory.html" class="active">Directory</a>
+            <a href="join.html">Join</a>
+            <a href="discover.html">Discover</a>
+        </nav>
+    </header>
+    <main class="home">
+        <picture>
+            <source srcset="images/kcc2.webp" media="(min-width: 1000px)">
+            <source srcset="images/kcc1.webp" media="(min-width: 500px)">
+            <img src="images/kcc1.webp" alt="kccc">
+        </picture>
+        
+        <section id="directory" class="direct">
+            <h2>Member Directory</h2>
+            <button id="toggle-view">List View</button>
+            <div id="member-list" class="grid-view"></div>
+        </section>
+    </main>
+    <footer>
+        <div class="bus">
+            <p>Kasoa Chamber of Commerce</p>
+            <p>Behind L'amour Royal Ecole</p>
+            <p>Kasoa 94</p>
+            <p>info@kasoachamber.com</p>
+            <p>(233) 204-8611</p>
+        </div>
+        <nav class="sociallinks">
+            <a href="https://youtube.com" target="_blank">
+                <img src="images/youtube.png" alt="youtube" width="50">
+            </a>
+            <a href="https://twitter.com" target="_blank">
+                <img src="images/twitter.png" alt="twitter" width="50">
+            </a>
+            <a href="https://linkedIn.com" target="_blank">
+                <img src="images/linkedIn.png" alt="linkedIn" width="50">
+            </a>
+        </nav>
+        <div class="personal">
+            <p>WDD 231 Class Project</p>
+            <p>💻Gifty Akosua Arkoh💻</p>
+            <p>&copy; <span id="currentyear"></span> 💻Kasoa Chamber Of Commerce💻,Ghana.</p>
+            <p><span id="lastModified"></span></p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[
+    {
+        "name": "Tech Innovators Ltd.",
+        "address": "123 Innovation Street, Accra, Ghana",
+        "phone": "+233 24 123 4567",
+        "website": "https://techinnovators.com",
+        "image": "images/bc.webp",
+        "membership_level": "Gold",
+        "description": "A leading company in AI and software development."
+    },
+    {
+        "name": "STEM Builders Inc.",
+        "address": "45 Learning Avenue, Kumasi, Ghana",
+        "phone": "+233 20 987 6543",
+        "website": "https://stembuilders.com",
+        "image": "images/L1.webp",
+        "membership_level": "Gold",
+        "description": "Empowering youth through STEM education."
+    },
+    {
+        "name": "Green Energy Solutions",
+        "address": "88 Solar Street, Cape Coast, Ghana",
+        "phone": "+233 55 876 1234",
+        "website": "https://greenenergy.com",
+        "image": "images/tq.webp",
+        "membership_level": "Silver",
+        "description": "Pioneers in renewable energy solutions."
+    },
+    {
+        "name": "AgroTech Ghana",
+        "address": "14 Farming Road, Tamale, Ghana",
+        "phone": "+233 30 456 7890",
+        "website": "https://agrotechghana.com",
+        "image": "images/ttt.webp",
+        "membership_level": "Gold",
+        "description": "Transforming agriculture through technology."
+    },
+    {
+        "name": "HealthTech Africa",
+        "address": "202 Wellness Drive, Accra, Ghana",
+        "phone": "+233 26 654 3210",
+        "website": "https://healthtechafrica.com",
+        "image": "images/l3.webp",
+        "membership_level": "Silver",
+        "description": "Innovative solutions for healthcare."
+    },
+    {
+        "name": "FinTech Hub",
+        "address": "7 Money Street, Takoradi, Ghana",
+        "phone": "+233 27 111 2222",
+        "website": "https://fintechhub.com",
+        "image": "images/fm.webp",
+        "membership_level": "Gold",
+        "description": "Providing financial technology solutions."
+    },
+    {
+        "name": "EduTech Solutions",
+        "address": "99 Knowledge Lane, Sunyani, Ghana",
+        "phone": "+233 50 333 4444",
+        "website": "https://edutech.com",
+        "image": "images/techie.webp",
+        "membership_level": "Silver",
+        "description": "Revolutionizing education with technology."
+    }
+]
+
+
+
+<section id="weather">
+<h2>Weather Forecast</h2>
+<div id="current-weather">
+    <p><strong>Current Temperature:</strong> <span id="current-temp"></span></p>
+    <div id="weather-icon-container"></div>
+    <p><strong>Condition:</strong> <span id="weather-desc"></span></p>
+</div>
+<ul id="forecast-list"></ul>
+</section>
+
+
+
+.weather-info, .forecast-box {
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.weather-info h2, .forecast-box h2 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.weather-info p {
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.weather-info figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.weather-info img {
+    width: 50px;
+    height: 50px;
+}
+
+.forecast-box ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.forecast-box li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}

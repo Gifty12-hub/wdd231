@@ -34,47 +34,49 @@
     </header>
     <main class="home">
         <h2>Home</h2>
-        <picture>
-            <source srcset="images/kcc2.webp" media="(min-width: 1000px)">
-            <source srcset="images/kcc1.webp" media="(min-width: 500px)">
-            <img src="images/kcc1.webp" alt="kccc">
-        </picture>
-        <div class="card1">
-            <section class="fyi">
-                <h2>Event</h2>
+        <section class="hero">
+            <picture>
+                <source srcset="images/kcc2.webp" media="(min-width: 1000px)">
+                <source srcset="images/kcc1.webp" media="(min-width: 500px)">
+                <img src="images/kcc1.webp" alt="kccc">
+            </picture>
+            <h2>Welcome to the KCC</h2>
+            <div class="container">
+                <p><strong>Join the Kasoa Chamber of Commerce!</strong></p>
+                <p>Grow your business, network with industry leaders, and access exclusive opportunities. Let’s build a stronger Kasoa together!</p>
+                <a href="join.html" class="cta-button">Join Now</a>
+            </div>
+        </section>
+        <div class="info-boxes">
+            <section class="events-box">
+                <h2>Current Events</h2>
                 <ul>
-                    <li>Workshops</li>
-                    <li>Mentorship</li>
-                    <li>Report Review</li>
-                    <li>Mid-Year Review</li>
-                    <li>End of Year Review</li>
-                    <li>Competitions</li>
+                    <li><strong>Kasoa Business Growth Summit</strong><br>June 20, 2025 - 6:00 PM<br>Kasoa Conference Center</li>
+                    <li><strong>Women in Business Forum</strong><br>September 26, 2025 - 9:00 AM<br>Kasoa Conference Center</li>
+                    <li><strong>Technology & Innovation Expo</strong><br>November 14, 2025 - 9:00 AM<br>Kasoa Conference Center</li>
+                    
                 </ul>
             </section>
-            <section class="fyi">
+            <section class="weather-info">
                 <h2>Current Weather</h2>
-                <ul>
-                    <li>Partly Cloudy <img src="images/partlycloud.webp" alt="Weather Icon" width="50"></li>
-                    <li>High: <span id="highTemp"></span></li>
-                    <li>Low: <span id="lowTemp"></span></li>
-                    <li>Humidity: <span id="humidity"></span></li>
-                    <li>Sunrise: <span id="sunrise"></span></li>
-                    <li>Sunset: <span id="sunset"></span></li>
-                </ul>
+                <p>The current temperature in Kasoa, Ghana is <span id="current-temp"></span></p>
+                <figure>
+                    <img id="weather-icon" src="weather" alt="weather">
+                    <figcaption></figcaption>
+                </figure>
             </section>
-            <section class="fyi">
-                <h2>Weather Forecast</h2>
-                <ul>
-                    <li>Today: Partly Cloudly</li>
-                    <li>Wednesday:Sunny </li>
-                    <li>Thursday: Rainy</li>
-                    <li>Friday: Foggy</li>
-                    <li>Saturday: Windy</li>
-                    <li>Sunday: Cloudly</li>
+                
+            <section class="forecast-box">
+                <h2>3-Day Forecast</h2>
+                <ul id="forecast-list">
+                    <li>Loading forecast.....</li>
                 </ul>
             </section>
         </div>
-
+        <section id="spotlights">
+            <h2>Member Spotlights</h2>
+            <div id="spotlight-list" class="grid-view"></div>
+        </section>
     </main>
     <footer>
         <div class="bus">
@@ -98,7 +100,7 @@
         <div class="personal">
             <p>WDD 231 Class Project</p>
             <p>💻Gifty Akosua Arkoh💻</p>
-            <p>&copy; 2025 <span id="currentyear"></span> 💻Kasoa Chamber Of Commerce💻,Ghana.</p>
+            <p>&copy; <span id="currentyear"></span> 💻Kasoa Chamber Of Commerce💻,Ghana.</p>
             <p><span id="lastModified"></span></p>
         </div>
     </footer>
