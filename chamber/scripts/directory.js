@@ -53,50 +53,30 @@ function displayMembers(members) {
 }
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    fetch('data/member.json')
-        .then(response => response.json())
-        .then(data => {
-            displaySpotlights(data);
-        })
-        .catch(error => console.error("Error loading member data:", error));
-});
-
-function displaySpotlights(members) {
-    const spotlightContainer = document.getElementById("spotlight-list");
-    spotlightContainer.innerHTML = ""; // Clear previous content
-    
-    // Filter for gold and silver members
-    const eligibleMembers = members.filter(member => 
-        member.membership_level === "Gold" || member.membership_level === "Silver"
-    );
-    
-    // Randomly select 2-3 members
-    const selectedMembers = getRandomMembers(eligibleMembers, 2, 3);
-    
-    // Generate HTML for each selected member
-    selectedMembers.forEach(member => {
-        const memberCard = document.createElement("div");
-        memberCard.classList.add("spotlight-card");
-        memberCard.innerHTML = `
-            <img src="${member.image}" alt="${member.name}" class="spotlight-image">
-            <h3>${member.name}</h3>
-            <p>${member.description}</p>
-            <p><strong>Address:</strong> ${member.address}</p>
-            <p><strong>Phone:</strong> ${member.phone}</p>
-            <p><strong>Membership Level:</strong> ${member.membership_level}</p>
-            <a href="${member.website}" target="_blank">Visit Website</a>
-        `;
-        spotlightContainer.appendChild(memberCard);
-    });
-}
-
-function getRandomMembers(array, min, max) {
-    const count = Math.floor(Math.random() * (max - min + 1)) + min;
-    const shuffled = array.sort(() => 0.5 - Math.random());
+function getRandomMembers(memberList, count) {
+    const shuffled = memberList.sort(() => 0.5 - Math.random());
     return shuffled.slice(0, count);
 }
 
+const spotlightContainer = document.getElementById("spotlight-list");
+spotlightContainer.innerHTML = "";
+
+const filteredMembers = members.filter(member => member.membership_level === "Gold" || member.membership_level === "Silver");
+const selectedMembers = getRandomMembers(filteredMembers, Math.floor(Math.random() * 2) + 2);
+
+selectedMembers.forEach(member => {
+    const memberCard = document.createElement("div");
+    memberCard.classList.add("spotlight-card");
+    memberCard.innerHTML = `
+        <img src="${member.image}" alt="${member.name}">
+        <h3>${member.name}</h3>
+        <p>${member.description}</p>
+        <p><strong>Address:</strong> ${member.address}</p>
+        <p><strong>Phone:</strong> ${member.phone}</p>
+        <a href="${member.website}" target="_blank">Visit Website</a>
+    `;
+    spotlightContainer.appendChild(memberCard);
+});
 
 
 document.addEventListener("DOMContentLoaded", () => {
