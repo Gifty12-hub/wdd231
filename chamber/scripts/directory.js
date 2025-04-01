@@ -176,3 +176,24 @@ window.onclick = function(event) {
     });
 };
 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const formData = [
+        { label: "First Name", value: urlParams.get("firstName") },
+        { label: "Last Name", value: urlParams.get("lastName") },
+        { label: "Email", value: urlParams.get("email") },
+        { label: "Mobile Phone", value: urlParams.get("mobile") },
+        { label: "Business Name", value: urlParams.get("orgName") },
+        { label: "Submission Date & Time", value: urlParams.get("timestamp") }
+    ];
+    
+    const list = document.getElementById("formDataList");
+    formData.forEach(item => {
+        if (item.value) {
+            const li = document.createElement("li");
+            li.innerHTML = `<strong>${item.label}:</strong> ${item.value}`;
+            list.appendChild(li);
+        }
+    });
+});

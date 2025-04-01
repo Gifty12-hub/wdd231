@@ -453,3 +453,35 @@ button:hover {
     cursor: pointer;
 }
 
+.thank-you-message {
+    margin: 20px;
+    font-size: 1.2em;
+}
+.user-data {
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+}
+.user-data ul {
+    list-style: none;
+    padding: 0;
+}
+.user-data li {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+.button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #004080;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.button:hover {
+    background-color: #002d5a;
+}
