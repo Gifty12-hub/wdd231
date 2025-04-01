@@ -112,10 +112,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function displayCurrentWeather(data) {
         currentTemp.textContent = `${Math.round(data.main.temp)}°C`;
-        weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-        weatherIcon.alt = data.weather[0].description;
-        weatherCaption.textContent = data.weather[0].description.charAt(0).toUpperCase() + data.weather[0].description.slice(1);
+        
+        if (data.weather && data.weather[0]) {
+            weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+            weatherIcon.alt = data.weather[0].description;
+            weatherCaption.textContent = data.weather[0].description.charAt(0).toUpperCase() + data.weather[0].description.slice(1);
+        } else {
+            weatherIcon.style.display = "none"; // Hide the image if data is missing
+            weatherCaption.textContent = "Weather data unavailable";
+        }
     }
+    
 
     function displayForecast(data) {
         forecastList.innerHTML = "";
@@ -150,3 +157,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fetchWeather();
 });
+
+document.getElementById('timestamp').value = new Date().toISOString();
+
+function openModal(modalId) {
+    document.getElementById(modalId).style.display = 'block';
+}
+
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = 'none';
+}
+
+window.onclick = function(event) {
+    document.querySelectorAll('.modal').forEach(modal => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+};
+

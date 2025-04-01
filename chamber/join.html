@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Business directory for our Chamber of Commerce. Connect with local businesses and services.">
+    <meta name="author" content="Gifty Akosua Arkoh">
+    <meta property="og:title" content="Kasoa of Commerce - Business Directory">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://gifty12-hub.github.io/wdd231/chamber/images/smallicon.png">
+    <meta property="og:url" content="https://gifty12-hub.github.io/wdd231/chamber/directory.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap" rel="stylesheet">
+    <title>Kasoa Chamber of Commerce | GIFTY AKOSUA ARKOH</title>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/directory.css">
+    <link rel="stylesheet" href="styles/directory-large.css">
+    <script src="scripts/directory.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="head">
+            <img src="images/rsz_1rsz_okcc.png" alt="kc" width="100">
+            <h1>Kasoa Chamber of Commerce</h1>
+            <button type="button" id="menu"></button>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="directory.html" class="active">Directory</a>
+            <a href="join.html">Join</a>
+            <a href="discover.html">Discover</a>
+        </nav>
+    </header>
+    <main>
+       <h2>Become a Member</h2>
+         <form method="get" action="thankyou.html">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" title="Your First Name" autocomplete="given-name" required>
+    
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" title="Your Last Name" autocomplete="family-name" required>
+    
+            <label for="orgTitle">Organizational Title:</label>
+            <input type="text" id="orgTitle" name="orgTitle" title="Your Title in Organization" autocomplete="organization-title" pattern="[A-Za-z-\s]{7,}" placeholder="CEO or Manager" required>
+    
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" title="Your Email Address" autocomplete="email" placeholder="example@email.com" required>
+    
+            <label for="mobile">Mobile Phone:</label>
+            <input type="tel" id="mobile" name="mobile" title="Your Mobile Number" autocomplete="tel" required>
+    
+            <label for="orgName">Organization Name:</label>
+            <input type="text" id="orgName" name="orgName" title="Your Organization Name" autocomplete="organization" required>
+    
+            <label for="membershipLevel">Membership Level:</label>
+            <select id="membershipLevel" name="membershipLevel" required>
+                <option value="NP">Non-Profit (Free)</option>
+                <option value="Bronze">Bronze</option>
+                <option value="Silver">Silver</option>
+                <option value="Gold">Gold</option>
+            </select>
+    
+            <label for="description">Business Description:</label>
+            <textarea id="description" name="description" title="Business Description"></textarea>
+    
+            <input type="hidden" name="timestamp" id="timestamp" value="">
+    
+            <button type="submit">Submit Application</button>
+        </form>
+    
+            <section class="membership-cards">
+                <div class="card" id="npCard">
+                    <h3>Non-Profit Membership</h3>
+                    <a href="#" onclick="openModal('npModal')">Learn More</a>
+                </div>
+                <div class="card" id="bronzeCard">
+                    <h3>Bronze Membership</h3>
+                    <a href="#" onclick="openModal('bronzeModal')">Learn More</a>
+                </div>
+                <div class="card" id="silverCard">
+                    <h3>Silver Membership</h3>
+                    <a href="#" onclick="openModal('silverModal')">Learn More</a>
+                </div>
+                <div class="card" id="goldCard">
+                    <h3>Gold Membership</h3>
+                    <a href="#" onclick="openModal('goldModal')">Learn More</a>
+                </div>
+            </section>
+    
+            <div id="npModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('npModal')">&times;</span>
+                    <h3>Non-Profit Membership Benefits</h3>
+                    <p>No fees, access to workshops and events.</p>
+                </div>
+            </div>
+            <div id="bronzeModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('bronzeModal')">&times;</span>
+                    <h3>Bronze Membership Benefits</h3>
+                    <p>Affordable fees, basic event discounts.</p>
+                </div>
+            </div>
+            <div id="silverModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('silverModal')">&times;</span>
+                    <h3>Silver Membership Benefits</h3>
+                    <p>Mid-tier fees, exclusive spotlight opportunities.</p>
+                </div>
+            </div>
+            <div id="goldModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('goldModal')">&times;</span>
+                    <h3>Gold Membership Benefits</h3>
+                    <p>Premium fees, access to all benefits and trainings.</p>
+                </div>
+            </div>
+    </main>
+    <footer>
+        <div class="bus">
+            <p>Kasoa Chamber of Commerce</p>
+            <p>Behind L'amour Royal Ecole</p>
+            <p>Kasoa 94</p>
+            <p>info@kasoachamber.com</p>
+            <p>(233) 204-8611</p>
+        </div>
+        <nav class="sociallinks">
+            <a href="https://youtube.com" target="_blank">
+                <img src="images/youtube.png" alt="youtube" width="50">
+            </a>
+            <a href="https://twitter.com" target="_blank">
+                <img src="images/twitter.png" alt="twitter" width="50">
+            </a>
+            <a href="https://linkedIn.com" target="_blank">
+                <img src="images/linkedin.png" alt="linkedIn" width="50">
+            </a>
+        </nav>
+        <div class="personal">
+            <p>WDD 231 Class Project</p>
+            <p>💻Gifty Akosua Arkoh💻</p>
+            <p>&copy; <span id="currentyear"></span> 💻Kasoa Chamber Of Commerce💻,Ghana.</p>
+            <p><span id="lastModified"></span></p>
+        </div>
+    </footer>
+</body>
+</html>
