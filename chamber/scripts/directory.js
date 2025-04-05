@@ -197,3 +197,52 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+// Load JSON and display cards
+async function loadDiscoverCards() {
+    const response = await fetch("data/discover.json");
+    const data = await response.json();
+    const container = document.getElementById("cards-container");
+  
+    data.forEach((item, index) => {
+      const card = document.createElement("section");
+      card.classList.add("discover-card");
+      card.style.gridArea = `card${index + 1}`;
+  
+      card.innerHTML = `
+        <h2>${item.title}</h2>
+        <figure>
+          <img src="${item.image}" alt="${item.title}" loading="lazy" />
+        </figure>
+        <address>${item.address}</address>
+        <p>${item.description}</p>
+        <button>Learn More</button>
+      `;
+  
+      container.appendChild(card);
+    });
+  }
+  
+  loadDiscoverCards();
+  
+  // Handle localStorage message
+  const visitArea = document.getElementById("visit-message");
+  const today = Date.now();
+  const lastVisit = Number(localStorage.getItem("lastVisit")) || 0;
+  localStorage.setItem("lastVisit", today);
+  
+  if (!lastVisit) {
+    visitArea.textContent = "Welcome! Let us know if you have any questions.";
+  } else {
+    const days = Math.floor((today - lastVisit) / (1000 * 60 * 60 * 24));
+    if (days < 1) {
+      visitArea.textContent = "Back so soon! Awesome!";
+    } else {
+      visitArea.textContent = `You last visited ${days} day${days === 1 ? "" : "s"} ago.`;
+    }
+  }
+  
+  // Footer year
+  document.getElementById("year").textContent = new Date().getFullYear();
+  
+
