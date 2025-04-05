@@ -1,0 +1,40 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #2c3e50;
+}
+
+p {
+    color: #34495e;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.color-sample {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+
+/* Color Schema */
+.primary-color {
+    background-color: #aa00aa;
+}
+
+.secondary-color {
+    background-color: #7462e0;
+}
+
+.accent1 {
+    background-color: #663399;
+}
+.accent2 {
+    background-color: #7600a8;
+}
