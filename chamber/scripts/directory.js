@@ -210,4 +210,73 @@ if (window.location.pathname.includes("thankyou.html")) {
 }
   
 });
+// Discover 
+const places = [
+    {
+        "title": "Kasoa Market",
+        "address": "Kasoa, Central Region, Ghana",
+        "description": "A bustling market with local goods and fresh produce.",
+        "image": "images/j1.webp"
+    },
+    {
+        "title": "West Hills Mall",
+        "address": "Accra-Cape Coast Road, Weija",
+        "description": "A modern shopping destination close to Kasoa.",
+        "image": "images/j2.webp"
+    },
+    {
+        "title": "Boti Falls",
+        "address": "Eastern Region, Ghana",
+        "description": "A twin waterfall attraction perfect for nature lovers.",
+        "image": "images/j3.webp"
+    },
+    {
+        "title": "Bojo Beach",
+        "address": "Bortianor, Accra",
+        "description": "Scenic beach with clean sands and peaceful waters.",
+        "image": "images/j4.webp"
+    },
+    {
+        "title": "Shai Hills Reserve",
+        "address": "Greater Accra Region",
+        "description": "A nature reserve with hiking trails and wildlife.",
+        "image": "images/j5.webp"
+    },
+    {
+        "title": "Makola Market",
+        "address": "Accra, Ghana",
+        "description": "One of Ghana’s largest and most vibrant markets.",
+        "image": "images/j5.webp"
+    },
+    {
+        "title": "Kakum National Park",
+        "address": "Central Region, Ghana",
+        "description": "Famous for its canopy walkway and rainforest tours.",
+        "image": "images/j7.webp"
+    },
+    {
+        "title": "Jamestown Lighthouse",
+        "address": "Jamestown, Accra",
+        "description": "A historic lighthouse with panoramic city views.",
+        "image": "images/j8.webp"
+    }
+];
+
+const cardsContainer = document.getElementById('cards-container');
+
+        places.forEach(place => {
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            card.innerHTML = `
+                <img src="${place.image}" alt="${place.title}">
+                <div class="card-content">
+                    <h3 class="card-title">${place.title}</h3>
+                    <p class="card-address">${place.address}</p>
+                    <p class="card-description">${place.description}</p>
+                </div>
+            `;
+
+            cardsContainer.appendChild(card);
+        });
 
