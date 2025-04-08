@@ -158,91 +158,56 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchWeather();
 });
 
-document.getElementById('timestamp').value = new Date().toISOString();
-
-function openModal(modalId) {
-    document.getElementById(modalId).style.display = 'block';
-}
-
-function closeModal(modalId) {
-    document.getElementById(modalId).style.display = 'none';
-}
-
-window.onclick = function(event) {
-    document.querySelectorAll('.modal').forEach(modal => {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
-};
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const urlParams = new URLSearchParams(window.location.search);
-    const formData = [
-        { label: "First Name", value: urlParams.get("firstName") },
-        { label: "Last Name", value: urlParams.get("lastName") },
-        { label: "Email", value: urlParams.get("email") },
-        { label: "Mobile Phone", value: urlParams.get("mobile") },
-        { label: "Business Name", value: urlParams.get("orgName") },
-        { label: "Submission Date & Time", value: urlParams.get("timestamp") }
-    ];
-    
-    const list = document.getElementById("formDataList");
-    formData.forEach(item => {
-        if (item.value) {
-            const li = document.createElement("li");
-            li.innerHTML = `<strong>${item.label}:</strong> ${item.value}`;
-            list.appendChild(li);
-        }
-    });
-});
-
-// Load JSON and display cards
-async function loadDiscoverCards() {
-    const response = await fetch("data/discover.json");
-    const data = await response.json();
-    const container = document.getElementById("cards-container");
-  
-    data.forEach((item, index) => {
-      const card = document.createElement("section");
-      card.classList.add("discover-card");
-      card.style.gridArea = `card${index + 1}`;
-  
-      card.innerHTML = `
-        <h2>${item.title}</h2>
-        <figure>
-          <img src="${item.image}" alt="${item.title}" loading="lazy" />
-        </figure>
-        <address>${item.address}</address>
-        <p>${item.description}</p>
-        <button>Learn More</button>
-      `;
-  
-      container.appendChild(card);
-    });
-  }
-  
-  loadDiscoverCards();
-  
-  // Handle localStorage message
-  const visitArea = document.getElementById("visit-message");
-  const today = Date.now();
-  const lastVisit = Number(localStorage.getItem("lastVisit")) || 0;
-  localStorage.setItem("lastVisit", today);
-  
-  if (!lastVisit) {
-    visitArea.textContent = "Welcome! Let us know if you have any questions.";
-  } else {
-    const days = Math.floor((today - lastVisit) / (1000 * 60 * 60 * 24));
-    if (days < 1) {
-      visitArea.textContent = "Back so soon! Awesome!";
-    } else {
-      visitArea.textContent = `You last visited ${days} day${days === 1 ? "" : "s"} ago.`;
+const discoverGrid = document.getElementById("discover-grid");
+    if (discoverGrid) {
+        fetchDiscoverData();
     }
-  }
+    const visitText = document.getElementById("visit-text");
+    if (visitText) {
+        displayVisitMessage();
+    }
+ const timestampField = document.getElementById("timestamp");
+    if (timestampField) {
+        timestampField.value = new Date().toISOString();
+    }
+
+    // Modal functionality
+    const modalLinks = document.querySelectorAll(".modal-link");
+    const modals = document.querySelectorAll(".modal");
+    const closeButtons = document.querySelectorAll(".close");
+
+    modalLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const modalId = link.getAttribute("href").substring(1);
+            const modal = document.getElementById(modalId);
+            if (modal) modal.style.display = "block";
+        });
+    });
+
+    closeButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const modal = button.closest(".modal");
+            if (modal) modal.style.display = "none";
+        });
+    });
+
+    window.addEventListener("click", (e) => {
+        modals.forEach(modal => {
+            if (e.target === modal) modal.style.display = "none";
+        });
+    });
+
+// Display form data on thank you page
+if (window.location.pathname.includes("thankyou.html")) {
+    const urlParams = new URLSearchParams(window.location.search);
+    document.getElementById("display-firstname").textContent = `${urlParams.get("firstname") || "N/A"}`;
+    document.getElementById("display-lastname").textContent = `${urlParams.get("lastname") || "N/A"}`;
+    document.getElementById("display-email").textContent = `${urlParams.get("email") || "N/A"}`;
+    document.getElementById("display-phone").textContent = `${urlParams.get("phone") || "N/A"}`;
+    document.getElementById("display-businessname").textContent = `${urlParams.get("businessname") || "N/A"}`;
+    document.getElementById("display-timestamp").textContent = `${urlParams.get("timestamp") || "N/A"}`;
+}
   
-  // Footer year
-  document.getElementById("year").textContent = new Date().getFullYear();
-  
+});
 
