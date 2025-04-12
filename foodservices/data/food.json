@@ -1,0 +1,24 @@
+{
+    "foods": [
+      {
+        "id": 1,
+        "name": "Jollof Rice",
+        "origin": "West Africa",
+        "spiceLevel": "Medium",
+        "mainIngredient": "Rice",
+        "description": "A popular one-pot dish with rice, tomatoes, and spices.",
+        "image": "images/f5.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Waakye",
+        "origin": "Ghana",
+        "spiceLevel": "Low",
+        "mainIngredient": "Beans & Rice",
+        "description": "A hearty mix of rice and beans, usually served with spaghetti, salad, and stew.",
+        "image": "images/f6.jpg"
+      }
+      
+    ]
+  }
+  

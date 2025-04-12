@@ -18,3 +18,69 @@
     <link rel="stylesheet" href="styles/food-large.css">
     <script src="scripts/food.js" defer></script>
 </head>
+<body>
+    <header>
+        <div class="head">
+            <img src="images/logo.png" alt="logo" >
+            <h1>Food Arena</h1>
+        </div>
+        <button type="button" id="menu"></button>
+        <nav class="navbar">
+            <a href="home.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+    <main>
+        <section class="contact-info">
+          <h2>Contact Us</h2>
+          <p>We'd love to hear from you! Whether you have a question, feedback, or just want to say hello — feel free to reach out.</p>
+      
+          <!-- Optimized Image with intrinsic aspect ratio and lazy loading -->
+          <img src="images/contact-us.jpg" alt="Contact Us" width="600" height="400" loading="lazy" >
+      
+          <div class="info-box">
+            <p><strong>Email:</strong> <a href="mailto:info@ghanarecipes.com">info@ghanarecipes.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+233241234567">+233 24 123 4567</a></p>
+            <p><strong>Location:</strong> Kasoa, Central Region, Ghana</p>
+          </div>
+        </section>
+      
+        <section class="contact-form">
+          <form action="form-action.html" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required >
+      
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required >
+      
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+      
+            <button type="submit">Send Message</button>
+          </form>
+        </section>
+      </main>
+      
+    <footer>
+        <div class="bus">
+            <p>Kasoa Chamber of Commerce</p>
+            <p>Behind L'amour Royal Ecole</p>
+            <p>Kasoa 94</p>
+            <p>info@kasoachamber.com</p>
+            <p>(233) 204-8611</p>
+            </div>
+            <nav class="sociallinks">
+            <a href="https://youtube.com" target="_blank"><img src="images/youtube.png" alt="youtube" ></a>
+            <a href="https://twitter.com" target="_blank"><img src="images/twitter.png" alt="twitter" ></a>
+            <a href="https://linkedIn.com" target="_blank"><img src="images/linkedin.png" alt="linkedIn" ></a>
+            </nav>
+            <div class="personal">
+            <p>WDD 231 Class Project</p>
+            <p>💻Gifty Akosua Arkoh💻</p>
+            <p>&copy; <span id="currentyear"></span> 💻Food Arena💻, Ghana.</p>
+            <p><span id="lastModified"></span></p>
+        </div>
+    </footer>
+</body>
+

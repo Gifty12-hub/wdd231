@@ -7,12 +7,12 @@
     <meta name="author" content="Gifty Akosua Arkoh">
     <meta property="og:title" content="Food Services">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://gifty12-hub.github.io/wdd231/foodservices/images/.png">
+    <meta property="og:image" content="https://gifty12-hub.github.io/wdd231/foodservices/images/pic.jpg">
     <meta property="og:url" content="https://gifty12-hub.github.io/wdd231/foodservices/home.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap" rel="stylesheet">
-    <title>Kasoa Chamber of Commerce | GIFTY AKOSUA ARKOH</title>
+    <title>FOOD ARENA | GIFTY AKOSUA ARKOH</title>
     <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" href="styles/food.css">
     <link rel="stylesheet" href="styles/food-large.css">
@@ -20,29 +20,72 @@
 </head>
 <body>
     <header>
-        <img src="" alt="">
-        <h1>Welcome to the food arena</h1>
+        <div class="head">
+            <img src="images/logo.png" alt="logo" >
+            <h1>Food Arena</h1>
+        </div>
         <button type="button" id="menu"></button>
-        <nav>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
+        <nav class="navbar">
+            <a href="home.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact Us</a>
         </nav>
     </header>
+
     <main>
-        <section>
-
+        <section class="hero">
+            <picture>
+                <source srcset="images/f1.webp" media="(min-width: 1000px)" >
+                <source srcset="images/f2.webp" media="(min-width: 500px)" >
+                <img src="images/f2.webp" alt="food" >
+            </picture>
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <h2>Welcome to Taste of Ghana</h2>
+                    <div class="container">
+                        <p>Experience the vibrant flavors of Ghanaian cuisine from the comfort of your kitchen.</p>
+                        <a href="about.html" class="cta-button1">Explore Recipes</a>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section>
 
-        </section>
-        <section>
-
-        </section>
+        <section class="sub-grid">
+            <div class="sub">
+              <h2>Why Ghanaian Food?</h2>
+              <img src="images/f3.jpg" alt="ghfoods" loading="lazy">
+              <p>Ghanaian cuisine is rich, diverse, and full of stories passed down through generations. From smoky Jollof to spicy soups, every dish is a celebration of culture and community.</p>
+              <a href="about.html" class="cta-button">Learn More</a>
+            </div>
+          
+            <div class="sub">
+              <h2>Got a Delicious Recipe?</h2>
+              <img src="images/f4.jpg" alt="fav" loading="lazy">
+              <p>We’d love to feature your special Ghanaian dish! Share your family recipe or sign up to receive new recipes in your inbox.</p>
+              <a href="contact.html" class="cta-button">Submit or Subscribe</a>
+            </div>
+          </section>
     </main>
+
     <footer>
-        
+        <div class="bus">
+            <p>Kasoa Chamber of Commerce</p>
+            <p>Behind L'amour Royal Ecole</p>
+            <p>Kasoa 94</p>
+            <p>info@kasoachamber.com</p>
+            <p>(233) 204-8611</p>
+        </div>
+        <nav class="sociallinks">
+            <a href="https://youtube.com" target="_blank"><img src="images/youtube.png" alt="youtube" ></a>
+            <a href="https://twitter.com" target="_blank"><img src="images/twitter.png" alt="twitter" ></a>
+            <a href="https://linkedIn.com" target="_blank"><img src="images/linkedin.png" alt="linkedIn" ></a>
+        </nav>
+        <div class="personal">
+            <p>WDD 231 Class Project</p>
+            <p>💻Gifty Akosua Arkoh💻</p>
+            <p>&copy; <span id="currentyear"></span> 💻Food Arena💻, Ghana.</p>
+            <p><span id="lastModified"></span></p>
+        </div>
     </footer>
 </body>
+</html>
