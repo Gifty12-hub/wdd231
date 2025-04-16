@@ -178,7 +178,7 @@ main {
   }
 
 .sub h2 {
-    background-color: rgb(15, 199, 43);
+    background-color: rgb(23, 63, 29);
     color: rgb(247, 246, 246);
     text-align: center;
     padding: 1rem;
@@ -271,7 +271,7 @@ main {
 
 .member h3 {
   margin-top: 1rem;
-  color: #d35400;
+  color: #c74f00;
 }
 
 .member p {
@@ -289,7 +289,7 @@ main {
 }
 
 .contact-info h2 {
-  color: #c0392b;
+  color: #ffbcb5;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
@@ -332,7 +332,7 @@ main {
 
 .contact-form button {
   padding: 0.75rem 1.5rem;
-  background-color: #d35400;
+  background-color: #000;
   color: #fff;
   border: none;
   border-radius: 8px;
