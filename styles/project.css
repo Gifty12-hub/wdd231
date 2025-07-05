@@ -78,7 +78,7 @@ main {
 }
 .cards {
   display: grid;
-  grid-template-columns: auto-fill, minmax(300px, 1fr);
+  grid-template-columns: auto-fill, minmax(300px, 1fr) ;
 }
 .cards .row {
     display: flex;
