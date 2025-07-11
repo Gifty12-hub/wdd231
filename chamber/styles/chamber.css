@@ -1,0 +1,155 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Work Sans", serif;
+	font-weight: 380;
+}
+
+/* mobile*/
+header {
+	background-color: #336b7597;
+    display: grid;
+    grid-gap: 1rem;
+    padding: 2px;
+    border: 1px solid rgba(26, 28, 31, 0.1);
+    box-shadow: 0 0 30px #6a4691;
+}
+
+header,main {
+	margin: 0 auto;
+}
+
+h1 {
+	font-size: 2rem;
+	color: rgb(9 18 18);
+  text-align: center;
+}
+
+#menu {
+	font-size: 1.5rem;
+    border: 0;
+    background: none;
+    color: #000;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+#menu::before {
+	content: "☰";
+}
+#menu.open::before {
+	content: "❌";
+}
+nav {
+	display: flex;
+	flex-direction: column;
+}
+.navbar {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	list-style: none;
+	color: #fff;
+}
+.navbar a {
+	display: none;
+	padding: 1rem;
+	text-align: left;
+	text-decoration: none;
+	color: rgb(10, 6, 6);
+}
+.navbar a:hover {
+	background-color: #464fd3;
+	color: rgb(12, 11, 12);
+	font-weight: 700;
+}
+.open a {
+	display: block;
+}
+
+
+/* STYLES */
+
+.view-toggle {
+  text-align: center;
+  margin: 1rem 0;
+}
+.view-toggle button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  background: #303d14;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.view-toggle button.active {
+  background: #1f2357;
+}
+
+#members-container.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+#members-container.list {
+  display: block;
+}
+.member-card {
+  background: #f9f9f9;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+#members-container.list .member-card {
+  margin: 1rem auto;
+  max-width: 500px;
+}
+.member-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+
+
+
+
+
+
+
+/*footer*/
+footer {
+  background-color: #004466;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.media {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; /* Adjust spacing as needed */
+    margin: 1rem 0;
+}
+
+footer .media img {
+  width: 40px;
+  height: auto;
+}
+
+
+
+
+
+

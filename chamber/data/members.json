@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Kasoa Tech Solutions",
+    "address": "123 Main St, Kasoa",
+    "phone": "+233 20 123 4567",
+    "website": "https://kasoatech.com",
+    "image": "tech-solution.png",
+    "membership": 3,
+    "info": "Leading provider of IT solutions in Kasoa."
+  },
+  {
+    "name": "Green Farms Ltd.",
+    "address": "45 Green Ave, Kasoa",
+    "phone": "+233 24 987 6543",
+    "website": "https://greenfarms.com",
+    "image": "green-farms.jpg",
+    "membership": 2,
+    "info": "Organic farming and produce supplier."
+  },
+  {
+    "name": "Kasoa Bookstore",
+    "address": "78 Book Rd, Kasoa",
+    "phone": "+233 26 555 1234",
+    "website": "https://kasoabooks.com",
+    "image": "epp-books.jpg",
+    "membership": 1,
+    "info": "Your local source for books and stationery."
+  },
+  {
+    "name": "Sunrise Bakery",
+    "address": "12 Sunrise St, Kasoa",
+    "phone": "+233 27 321 4321",
+    "website": "https://sunrisebakery.com",
+    "image": "sunrisebakery.jpg",
+    "membership": 2,
+    "info": "Fresh bread and pastries daily."
+  },
+  {
+    "name": "Kasoa Fitness Center",
+    "address": "90 Fit Lane, Kasoa",
+    "phone": "+233 23 456 7890",
+    "website": "https://kasoafitness.com",
+    "image": "kasoa-fitness.jpg",
+    "membership": 1,
+    "info": "Modern gym and fitness classes."
+  },
+  {
+    "name": "Bright Future Academy",
+    "address": "34 School Rd, Kasoa",
+    "phone": "+233 21 654 9876",
+    "website": "https://brightfuture.edu.gh",
+    "image": "bright-future.png",
+    "membership": 3,
+    "info": "Top-rated private school in Kasoa."
+  },
+  {
+    "name": "Kasoa Medical Clinic",
+    "address": "56 Health Blvd, Kasoa",
+    "phone": "+233 25 789 6543",
+    "website": "https://kasoaclinic.com",
+    "image": "kasoa-clinic.jpg",
+    "membership": 2,
+    "info": "Comprehensive healthcare services."
+  }
+]
