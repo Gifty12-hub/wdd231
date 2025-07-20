@@ -15,6 +15,7 @@
         display: none;
     }
 }
+/* directory */
 
 @media (max-width: 700px) {
   #members-container.grid {
@@ -22,4 +23,33 @@
   }
 }
 
+
+/* home page */
+@media (max-width: 800px) {
+    .spotlight-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero {
+        height: 180px;
+    }
+}
+@media (max-width: 600px) {
+    .events {
+        padding: 1rem 0.5rem;
+        font-size: 1rem;
+    }
+    .events h2 {
+        font-size: 1.2rem;
+    }
+  }
+  @media (max-width: 600px) {
+    .weather {
+        padding: 1rem 0.5rem;
+        font-size: 1rem;
+    }
+    .weather h2 {
+        font-size: 1.2rem;
+    }
+  }
 

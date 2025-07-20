@@ -30,7 +30,7 @@
                     <a id="home" href="index.html">Home</a>
                 </li>
                 <li>
-                    <a id="old" href="#">Chamber</a>
+                    <a id="old" href="directory.html">Chamber</a>
                 </li>
                 <li>
                     <a id="new" href="#">Final Project</a>
@@ -39,13 +39,44 @@
         </nav>
     </header>
     <main>
-        <h1>Our Directory</h1>
-<div class="view-toggle">
-  <button id="grid-view" class="active">Grid View</button>
-  <button id="list-view">List View</button>
-</div>
-<div id="members-container" class="grid"></div>
-    </main>
+    <h1>Home</h1>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="images/heroimage.jpg" alt="Kasoa Chamber Hero Image">
+        <div class="hero-text">
+            <h2>Empowering Local Business</h2>
+            <a href="join.html" class="cta-button">Join the Chamber</a>
+        </div>
+    </section>
+
+    <!-- Current Events -->
+    <section class="events">
+        <h2>Current Events</h2>
+        <ul>
+            <li>Business Networking Breakfast – July 25, 2025</li>
+            <li>Kasoa Market Day – August 10, 2025</li>
+            <li>Entrepreneur Workshop – September 5, 2025</li>
+        </ul>
+    </section>
+
+    <!-- Weather Section -->
+    <section class="weather">
+        <h2>Current Weather</h2>
+        <div id="weather-info">
+            <p>Loading weather...</p>
+        </div>
+        <div id="forecast"></div>
+    </section>
+
+    <!-- Spotlights -->
+    <section class="spotlights">
+        <h2>Member Spotlights</h2>
+        <div class="spotlight-cards" id="spotlight-cards">
+            <!-- JS will inject spotlight cards here -->
+        </div>
+    </section>
+</main>
     <footer>
         <nav class="media">
             <a href="https://www.github.com" target="_blank">
