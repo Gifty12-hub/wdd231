@@ -52,4 +52,23 @@
         font-size: 1.2rem;
     }
   }
+  /* Join */
+  @media (min-width: 900px) {
+    .join-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .join-form {
+        flex: 2;
+    }
+    .membership-cards {
+        flex: 1;
+        margin-left: 2rem;
+    }
+}
+@media (min-width: 900px) {
+    .membership-cards {
+        margin-top: 0;
+    }
+}
 

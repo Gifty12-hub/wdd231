@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasoa Chamber of Commerce</title>
+    <script src="scripts/chamber.js" defer></script>
+    <meta name="description" content="My name is Gifty Akosua Arkoh i am studying Software development. This page is used to showcase the jobs available.">
+    <meta name="author" content="Gifty Akosua Arkoh">
+    <meta property="og:title" content="Chamber of Commerce">
+    <meta property="og:description" content="My name is Gifty Akosua Arkoh i am studying Software development. This page is used to showcase the jobs available.">
+    <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbDBwcPM8BUqHnxqx_QXwJi4OViAdqj9fQPQ&s">
+    <meta property="og:url" content="https://gifty12-hub.github.io/wdd231/chamber/directory.html">
+    <meta property="og:locale" content="en_US">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@380&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/chamber.css">
+    <link rel="stylesheet" href="styles/chamber-large.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+<body>
+    <header>
+        <img src="images/projectlogo.png" alt="Chamber Logo" width="100">
+        <h1>Kasoa Chamber of Commerce</h1>
+        <button type="button" id="menu">  </button>
+        <nav>
+            <ul class="navbar">
+                <li>
+                    <a id="home" href="index.html">Home</a>
+                </li>
+                <li>
+                    <a id="old" href="directory.html">Chamber</a>
+                </li>
+                <li>
+                    <a id="new" href="#">Final Project</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Thank You for Joining!</h1>
+    <p class="thanks-message">We appreciate your interest in the Kasoa Chamber of Commerce. Here is the information you submitted:</p>
+    <section class="confirmation-card">
+        <h2>Submission Details</h2>
+        <ul>
+            <li><strong>First Name:</strong> <span id="cf-firstname"></span></li>
+            <li><strong>Last Name:</strong> <span id="cf-lastname"></span></li>
+            <li><strong>Email:</strong> <span id="cf-email"></span></li>
+            <li><strong>Mobile Number:</strong> <span id="cf-phone"></span></li>
+            <li><strong>Business/Organization Name:</strong> <span id="cf-organization"></span></li>
+            <li><strong>Submission Date:</strong> <span id="cf-timestamp"></span></li>
+        </ul>
+    </section>
+    <a href="index.html" class="cta-button" style="margin-top:2rem;display:inline-block;">Return Home</a>
+    
+    </main>
+    <footer>
+        <nav class="media">
+            <a href="https://www.github.com" target="_blank">
+                <img src="images/github.png" alt="GitHub" width="60">
+            </a>
+            <a href="https://www.linkedin.com" target="_blank">
+                <img src="images/linkedin.png" alt="LinkedIn" width="60">
+            </a>
+            <a href="https://twitter.com" target="_blank">
+                <img src="images/x-logo.png" alt="Twitter" width="60">
+            </a>
+        </nav>
+        <p>&copy; <span id="currentyear"></span> 💻Gifty Akosua Arkoh💻,Ghana.</p>
+        <p id="lastModified"></p> 
+    </footer>
+</body>
+</html>

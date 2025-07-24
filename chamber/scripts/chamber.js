@@ -156,3 +156,46 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// Join //
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Set timestamp
+    const ts = document.getElementById('timestamp');
+    if (ts) ts.value = new Date().toISOString();
+
+    // Modal logic
+    document.querySelectorAll('.modal-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const modal = document.querySelector(this.getAttribute('href'));
+            if (modal) modal.style.display = 'flex';
+            modal.querySelector('.close').focus();
+        });
+    });
+    document.querySelectorAll('.modal .close').forEach(btn => {
+        btn.addEventListener('click', function() {
+            this.closest('.modal').style.display = 'none';
+        });
+        btn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ' || e.key === 'Escape') {
+                this.closest('.modal').style.display = 'none';
+            }
+        });
+    });
+    window.addEventListener('click', function(e) {
+        if (e.target.classList.contains('modal')) {
+            e.target.style.display = 'none';
+        }
+    });
+});
+
+// thank you //
+ // Parse URL parameters and display required fields
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById('cf-firstname').textContent = params.get('firstname') || '';
+    document.getElementById('cf-lastname').textContent = params.get('lastname') || '';
+    document.getElementById('cf-email').textContent = params.get('email') || '';
+    document.getElementById('cf-phone').textContent = params.get('phone') || '';
+    document.getElementById('cf-organization').textContent = params.get('organization') || '';
+    document.getElementById('cf-timestamp').textContent = params.get('timestamp') 
+        ? new Date(params.get('timestamp')).toLocaleString() : '';
