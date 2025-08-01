@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Kasoa Central Market",
+    "address": "Market Rd, Kasoa",
+    "description": "A bustling market with local produce, crafts, and food.",
+    "image": "images/market.jpg"
+  },
+  {
+    "name": "Kasoa Library",
+    "address": "Library Ave, Kasoa",
+    "description": "A modern library with a wide selection of books and study spaces.",
+    "image": "images/library.jpg"
+  },
+  {
+    "name": "Peace Park",
+    "address": "Peace St, Kasoa",
+    "description": "A green park for relaxation, picnics, and community events.",
+    "image": "images/park.jpg"
+  },
+  {
+    "name": "Kasoa Art Gallery",
+    "address": "Art Lane, Kasoa",
+    "description": "Showcasing local artists and cultural exhibitions.",
+    "image": "images/gallery.jpg"
+  },
+  {
+    "name": "Sunrise Café",
+    "address": "Sunrise Rd, Kasoa",
+    "description": "A cozy café known for its pastries and coffee.",
+    "image": "images/cafe.jpg"
+  },
+  {
+    "name": "Kasoa Sports Complex",
+    "address": "Sports Ave, Kasoa",
+    "description": "Facilities for football, basketball, and athletics.",
+    "image": "images/sports.jpg"
+  },
+  {
+    "name": "Heritage Museum",
+    "address": "Heritage Rd, Kasoa",
+    "description": "Explore the history and culture of Kasoa.",
+    "image": "images/museum.jpg"
+  },
+  {
+    "name": "Green Valley Farm",
+    "address": "Farm Lane, Kasoa",
+    "description": "A family-friendly farm with tours and fresh produce.",
+    "image": "images/farm.jpg"
+  }
+]

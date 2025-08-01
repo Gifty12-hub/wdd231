@@ -199,3 +199,40 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('cf-organization').textContent = params.get('organization') || '';
     document.getElementById('cf-timestamp').textContent = params.get('timestamp') 
         ? new Date(params.get('timestamp')).toLocaleString() : '';
+
+        // Discover //
+        // Load cards from JSON
+fetch('data/discover.json')
+  .then(res => res.json())
+  .then(items => {
+    const grid = document.getElementById('discover-grid');
+    grid.innerHTML = items.map(item => `
+      <article class="discover-card">
+        <h2>${item.name}</h2>
+        <figure>
+          <img src="${item.image}" alt="${item.name}">
+        </figure>
+        <address>${item.address}</address>
+        <p>${item.description}</p>
+        <button type="button">Learn More</button>
+      </article>
+    `).join('');
+  });
+
+// Visit message logic
+const msg = document.getElementById('visit-message');
+const lastVisit = localStorage.getItem('discover-last-visit');
+const now = Date.now();
+if (!lastVisit) {
+  msg.textContent = "Welcome! Let us know if you have any questions.";
+} else {
+  const days = Math.floor((now - Number(lastVisit)) / (1000 * 60 * 60 * 24));
+  if (days < 1) {
+    msg.textContent = "Back so soon! Awesome!";
+  } else if (days === 1) {
+    msg.textContent = "You last visited 1 day ago.";
+  } else {
+    msg.textContent = `You last visited ${days} days ago.`;
+  }
+}
+localStorage.setItem('discover-last-visit', now);
