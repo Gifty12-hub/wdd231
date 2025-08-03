@@ -24,6 +24,10 @@ const apiKey = "a499842758ba240c50082f2826a47dfb"; // <-- Replace with your Open
 const city = "Kasoa,GH";
 
 async function getWeather() {
+    const weatherInfo = document.getElementById('weather-info');
+    const forecast = document.getElementById('forecast');
+    if (!weatherInfo || !forecast) return; // Exit if elements are not found
+
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
 
@@ -191,33 +195,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // thank you //
  // Parse URL parameters and display required fields
+const cfFirst = document.getElementById('cf-firstname');
+if (cfFirst) {
     const params = new URLSearchParams(window.location.search);
-    document.getElementById('cf-firstname').textContent = params.get('firstname') || '';
+    cfFirst.textContent = params.get('firstname') || '';
     document.getElementById('cf-lastname').textContent = params.get('lastname') || '';
     document.getElementById('cf-email').textContent = params.get('email') || '';
     document.getElementById('cf-phone').textContent = params.get('phone') || '';
     document.getElementById('cf-organization').textContent = params.get('organization') || '';
     document.getElementById('cf-timestamp').textContent = params.get('timestamp') 
         ? new Date(params.get('timestamp')).toLocaleString() : '';
+}
 
         // Discover //
         // Load cards from JSON
-fetch('data/discover.json')
-  .then(res => res.json())
-  .then(items => {
-    const grid = document.getElementById('discover-grid');
-    grid.innerHTML = items.map(item => `
-      <article class="discover-card">
-        <h2>${item.name}</h2>
-        <figure>
-          <img src="${item.image}" alt="${item.name}">
-        </figure>
-        <address>${item.address}</address>
-        <p>${item.description}</p>
-        <button type="button">Learn More</button>
-      </article>
-    `).join('');
-  });
+ fetch('data/discover.json')
+    .then(res => res.json())
+    .then(items => {
+      const grid = document.getElementById('discover-grid');
+      if (!grid) return; // Defensive: only run if element exists
+      grid.innerHTML = items.map(item => `
+        <article class="discover-card">
+          <h2>${item.name}</h2>
+          <figure>
+            <img src="${item.image}" alt="${item.name}" loading="lazy">
+          </figure>
+          <address>${item.address}</address>
+          <p>${item.description}</p>
+          <button type="button">Learn More</button>
+        </article>
+      `).join('');
+    });
 
 // Visit message logic
 const msg = document.getElementById('visit-message');
@@ -236,3 +244,4 @@ if (!lastVisit) {
   }
 }
 localStorage.setItem('discover-last-visit', now);
+
