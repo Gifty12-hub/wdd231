@@ -128,7 +128,7 @@ function displayInnovations(list) {
         const card = document.createElement('div');
         card.classList.add('card');
         card.innerHTML = `
-            <img src="${item.image}" alt="${item.name}">
+            <img src="${item.image}" alt="${item.name}" loading="lazy">
             <div class="card-content">
                 <h3>${item.name}</h3>
                 <p>${item.description.substring(0, 80)}...</p>
@@ -141,6 +141,7 @@ function displayInnovations(list) {
         innovationsContainer.appendChild(card);
     });
 }
+
 
 // Filter event listeners
 if (countryFilter) countryFilter.addEventListener('change', applyFilters);
