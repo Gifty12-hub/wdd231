@@ -1,0 +1,135 @@
+[
+  {
+    "id": 1,
+    "name": "Cardio Pad",
+    "inventor": "Arthur Zang",
+    "country": "Cameroon",
+    "year": 2014,
+    "type": "Health",
+    "description": "A medical tablet that allows cardiac tests to be performed in remote areas.",
+    "impact": "Increases access to heart health diagnostics in rural communities.",
+    "image": "images/cardiopad.jpeg",
+    "video": "https://www.youtube.com/embed/sample-video"
+  },
+  {
+    "id": 2,
+    "name": "M-Pesa",
+    "inventor": "Safaricom",
+    "country": "Kenya",
+    "year": 2007,
+    "type": "Finance",
+    "description": "Mobile money platform transforming how people access financial services.",
+    "impact": "Enabled millions of unbanked people to transfer and save money securely.",
+    "image": "images/mpesa.png",
+    "video": "https://www.youtube.com/embed/sample-video"
+  },
+
+    {
+        "id": 3,
+        "name": "Solar Water Pump",
+        "inventor": "KickStart International",
+        "country": "Kenya",
+        "year": 2002,
+        "type": "Agriculture",
+        "description": "A solar-powered water pump that helps farmers irrigate their crops.",
+        "impact": "Increases agricultural productivity and reduces reliance on rain-fed agriculture.",
+        "image": "images/solarwaterpump.webp",
+        "video": "https://www.youtube.com/embed/sample-video"
+    },
+    {
+    "id": 4,
+    "name": "MamaOpe Smart Jacket",
+    "inventor": "Brian Turyabagye",
+    "country": "Uganda",
+    "year": 2017,
+    "type": "Health",
+    "description": "A biomedical smart jacket that diagnoses pneumonia faster and more accurately than a doctor.",
+    "impact": "Reduces pneumonia misdiagnosis and saves children's lives in rural areas.",
+    "image": "images/jacket.webp",
+    "video": "https://www.youtube.com/embed/sample-video"
+},
+{
+    "id": 5,
+    "name": "Silicon Savannah Drones",
+    "inventor": "Zipline",
+    "country": "Rwanda",
+    "year": 2016,
+    "type": "Logistics",
+    "description": "A drone delivery system that transports medical supplies to remote clinics.",
+    "impact": "Improves access to essential medicines and blood in hard-to-reach areas.",
+    "image": "images/drone.jpeg",
+    "video": "https://www.youtube.com/embed/sample-video"
+},
+{
+    "id": 6,
+    "name": "Eco-Friendly Briquettes",
+    "inventor": "Chardust Ltd.",
+    "country": "Kenya",
+    "year": 2010,
+    "type": "Environment",
+    "description": "Charcoal briquettes made from recycled agricultural waste, providing a cleaner alternative to wood fuel.",
+    "impact": "Reduces deforestation and air pollution while creating jobs.",
+    "image": "images/briquettes.webp",
+    "video": "https://www.youtube.com/embed/sample-video"
+},
+{
+    "id": 7,
+    "name": "mPedigree Goldkeys",
+    "inventor": "Bright Simons",
+    "country": "Ghana",
+    "year": 2007,
+    "type": "Health",
+    "description": "A mobile-based system that allows consumers to verify the authenticity of medicines using SMS codes.",
+    "impact": "Helps combat counterfeit drugs and improves public health safety.",
+    "image": "images/mpedigree.jpeg",
+    "video": "https://www.youtube.com/embed/sample-video"
+},
+{
+    "id": 8,
+    "name": "FarmDrive",
+    "inventor": "Samuel Doe",
+    "country": "Liberia",
+    "year": 2018,
+    "type": "Agriculture",
+    "description": "A digital platform that connects smallholder farmers to financial institutions using data analytics.",
+    "impact": "Increases access to credit and boosts agricultural productivity.",
+    "image": "images/farmdrive.webp",
+    "video": "https://www.youtube.com/embed/sample-video"
+},
+{
+    "id": 9,
+    "name": "SolarKiosk",
+    "inventor": "Kossi Amouzou",
+    "country": "Togo",
+    "year": 2015,
+    "type": "Energy",
+    "description": "A modular solar-powered kiosk providing electricity, internet, and essential services to rural communities.",
+    "impact": "Improves access to clean energy and digital services in off-grid areas.",
+    "image": "images/kiosk.webp",
+    "video": "https://www.youtube.com/embed/sample-video"
+},
+{
+    "id": 10,
+    "name": "Fonio Processing Machine",
+    "inventor": "Ahouansou Jean",
+    "country": "Benin",
+    "year": 2012,
+    "type": "Agriculture",
+    "description": "A machine that automates the cleaning and processing of fonio, a traditional West African grain.",
+    "impact": "Reduces manual labor and increases production efficiency for local farmers.",
+    "image": "images/fonio.webp",
+    "video": "https://www.youtube.com/embed/sample-video"
+},
+{
+    "id": 11,
+    "name": "Paystack",
+    "inventor": "Shola Akinlade & Ezra Olubi",
+    "country": "Nigeria",
+    "year": 2015,
+    "type": "Finance",
+    "description": "A payment processing platform that enables businesses to accept payments online and offline.",
+    "impact": "Empowers thousands of African businesses with secure and easy payment solutions.",
+    "image": "images/paystack.png",
+    "video": "https://www.youtube.com/embed/sample-video"
+}
+]    

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>African STEM Innovation Hub</title>
+  <meta name="description" content="SpellSmart helps you improve your English spelling and vocabulary with daily word challenges, spelling tests, and progress tracking.">
+  <meta name="author" content="Gifty Akosua Arkoh">
+  <meta property="og:title" content="SpellSmart – Daily Word Challenge">
+  <meta property="og:description" content="Improve your English spelling and vocabulary with SpellSmart's daily challenges and interactive tests.">
+  <meta property="og:image" content="images/spellsmart.png">
+  <meta property="og:url" content="https://gifty12-hub.github.io/project/index.html">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon(3).ico">
+  <link rel="stylesheet" href="styles/final.css">
+  <link rel="stylesheet" href="styles/final-large.css">
+  <script src="scripts/final.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@380&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <img src="images/spellsmart.png" alt="Logo" width="100">
+        <h1>African STEM Innovation Hub</h1>
+        <button type="button" id="menu">  </button>
+        <nav>
+            <ul class="navbar">
+                <li>
+                    <a id="home" href="index.html">Home</a>
+                </li>
+                <li>
+                    <a id="about" href="about.html">About</a>
+                </li>
+                <li>
+                    <a id="innovation" href="Innovation.html">Our Innovations</a>
+                </li>
+            </ul>
+    </nav>
+  </header>
+<main>
+   <!-- Mission Statement -->
+        <section class="mission">
+            <h2>Our Mission</h2>
+            <p>
+                Our mission is to showcase and celebrate Africa's ingenuity by highlighting groundbreaking innovations 
+                in technology, health, energy, and education. We aim to inspire the next generation of African inventors 
+                and problem-solvers, connecting creativity with opportunities for impact.
+            </p>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="contact">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+            <p id="formStatus" class="status"></p>
+        </section>
+</main>
+  <footer>
+    <nav class="media">
+            <a href="https://www.github.com" target="_blank">
+                <img src="images/github.png" alt="GitHub" width="60">
+            </a>
+            <a href="https://www.linkedin.com" target="_blank">
+                <img src="images/linkedin.png" alt="LinkedIn" width="60">
+            </a>
+            <a href="https://twitter.com" target="_blank">
+                <img src="images/x-logo.png" alt="Twitter" width="60">
+            </a>
+      </nav>
+        <p>&copy; <span id="currentyear"></span> 💻Gifty Akosua Arkoh💻,Ghana.</p>
+        <p id="lastModified"></p>  
+  </footer>
+</body>
+</html>

@@ -1,0 +1,297 @@
+/* Header */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Work Sans", serif;
+	font-weight: 380;
+}
+
+/* mobile*/
+header {
+	background-color: #336b7597;
+    display: grid;
+    grid-gap: 1rem;
+    padding: 2px;
+    border: 1px solid rgba(26, 28, 31, 0.1);
+    box-shadow: 0 0 30px #6a4691;
+}
+
+header,main {
+	margin: 0 auto;
+}
+
+h1 {
+	font-size: 2rem;
+	color: rgb(9 18 18);
+  text-align: center;
+}
+
+#menu {
+	font-size: 1.5rem;
+    border: 0;
+    background: none;
+    color: #000;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+#menu::before {
+	content: "☰";
+}
+#menu.open::before {
+	content: "❌";
+}
+nav {
+	display: flex;
+	flex-direction: column;
+}
+.navbar {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	list-style: none;
+	color: #fff;
+}
+.navbar a {
+	display: none;
+	padding: 1rem;
+	text-align: left;
+	text-decoration: none;
+	color: rgb(10, 6, 6);
+}
+.navbar a:hover {
+	background-color: #464fd3;
+	color: rgb(12, 11, 12);
+	font-weight: 700;
+}
+.open a {
+	display: block;
+}
+/* home */
+/* Intro Section */
+.intro {
+    background: linear-gradient(to right, #ffecd2, #fcb69f);
+    padding: 2rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.intro-text {
+    flex: 1;
+}
+
+.intro-text h2 {
+    color: #1b4965;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.intro-text p {
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.intro-image {
+    flex: 1;
+    text-align: center;
+}
+
+.intro-image img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Featured Section */
+.featured {
+    margin-top: 3rem;
+    background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.featured h2 {
+    color: #003049;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    background: #ff7f50;
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #ff5a1f;
+}
+
+
+/*Innovations*/
+/* Filters */
+.filters {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.filter-group label {
+    font-weight: bold;
+}
+
+.filter-group select {
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+.card {
+    width: 250px;          /* Consistent width */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+/* About */
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 1rem;
+    border-radius: 8px;
+    max-width: 800px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.modal-content h2 {
+    color: #006400;
+    margin-top: 1rem;
+}
+
+.like-btn {
+    background: #006400;
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.like-btn.liked {
+    background: #FF4500;
+}
+
+.mission, .contact {
+    background: white;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #2b5d34;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input, textarea, button {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background: #2b5d34;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+}
+button:hover {
+    background: #237028;
+}
+
+.status {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+/*footer*/
+footer {
+  background-color: #004466;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.media {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; /* Adjust spacing as needed */
+    margin: 1rem 0;
+}
+
+footer .media img {
+  width: 40px;
+  height: auto;
+}
