@@ -121,26 +121,29 @@ function populateFilters() {
 }
 
 // Display innovations as cards
-function displayInnovations(list) {
-    if (!innovationsContainer) return;
+function displayInnovations(data) {
     innovationsContainer.innerHTML = '';
-    list.forEach(item => {
-        const card = document.createElement('div');
-        card.classList.add('card');
+
+    data.forEach(item => {
+        const card = document.createElement('article');
+        card.classList.add('innovation-card');
+
         card.innerHTML = `
-            <img src="${item.image}" alt="${item.name}" loading="lazy">
-            <div class="card-content">
-                <h3>${item.name}</h3>
-                <p>${item.description.substring(0, 80)}...</p>
-                <button class="btn" data-id="${item.id}">View Details</button>
-                <button class="like-btn ${likedInnovations.includes(item.id) ? 'liked' : ''}" data-id="${item.id}">
-                    ${likedInnovations.includes(item.id) ? 'Unlike' : 'Like'}
-                </button>
-            </div>
+            <img src="${item.image}" 
+                 alt="${item.name}" 
+                 loading="lazy"
+                 class="innovation-image">
+            <h3>${item.name}</h3>
+            <p><strong>Inventor:</strong> ${item.inventor}</p>
+            <p><strong>Country:</strong> ${item.country}</p>
+            <p><strong>Year:</strong> ${item.year}</p>
+            <p>${item.description}</p>
         `;
+
         innovationsContainer.appendChild(card);
     });
 }
+
 
 
 // Filter event listeners
